@@ -1,0 +1,511 @@
+@charset "utf-8";
+
+@import './global.scss';
+/* CSS Document */
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0; /*设置4个边框的样式*/
+    outline-style: none; /*FF*/
+    vertical-align: middle;
+    word-break: break-word;
+}
+html {
+    p,
+    dl,
+    ol,
+    ul {
+        margin-bottom: 0;
+    }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+html,
+body {
+    height: 100% !important;
+    min-height: 100%;
+    width: 100%;
+    background: #fff;
+}
+body {
+    font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica,
+        Arial, 'Chinese Quote', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 12px;
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    .ant-select-selection-selected-value,
+    .ant-select-dropdown-menu-item {
+        font-size: 12px;
+    }
+    .ant-select-dropdown-menu-item:hover:not(.ant-select-dropdown-menu-item-disabled),
+    .ant-select-dropdown-menu-item-active:not(.ant-select-dropdown-menu-item-disabled) {
+        background-color: #f5f5f5;
+    }
+}
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+#root {
+    height: 100%;
+    min-height: 100%;
+    @include flex-def();
+}
+
+ul,
+ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.65);
+}
+b,
+strong,
+i,
+em {
+    font-weight: normal;
+    font-style: normal;
+}
+fieldset,
+img {
+    border: 0;
+    vertical-align: middle;
+}
+span {
+    display: inline-block;
+}
+/** 重置表单元素 **/
+legend {
+    color: #000;
+} /* for ie6 */
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+} /* 使得表单元素在 ie 下能继承字体大小 */
+/* 注：optgroup 无法扶正 */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    padding: 0;
+    margin: 0;
+    font: inherit; /*inherit 继承*/
+    color: inherit;
+    outline: none;
+}
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    border: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+/*css为clearfix，清除浮动*/
+.clearfix::after {
+    content: '';
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+
+/* 浮动 */
+.floatL {
+    float: left;
+}
+.floatR {
+    float: right;
+}
+/* 文字 */
+.text_left {
+    text-align: left;
+}
+.text_center {
+    text-align: center;
+}
+.text_right {
+    text-align: right;
+}
+
+.text-overflow {
+    display: block; /*内联对象需加*/
+    word-break: keep-all; /* 不换行 */
+    white-space: nowrap; /* 不换行 */
+    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+.relative {
+    position: relative;
+}
+.pointer {
+    cursor: pointer;
+}
+table {
+    border-collapse: collapse;
+}
+// 移动端点击时高亮颜色设为透明
+.no-highlight {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.circle-box-shadow {
+    @include boxShadow(1px, 4px, 10px, 0, rgba(152, 152, 152, 0.4));
+}
+
+.border-box-shadow {
+    -webkit-box-shadow: 0 5px 15px 1px #276cf6;
+    -moz-box-shadow: 0 5px 15px 1px #276cf6;
+    box-shadow: 0 5px 15px 1px #276cf6;
+}
+.module_box_shadow {
+    &:hover {
+        -webkit-box-shadow: 0 0 21px 0 rgba(155, 155, 155, 0.3);
+        -moz-box-shadow: 0 0 21px 0 rgba(155, 155, 155, 0.3);
+        box-shadow: 0 0 21px 0 rgba(155, 155, 155, 0.3);
+    }
+}
+
+.min-width-info {
+    width: 100%;
+    min-width: 1200px;
+}
+
+@-webkit-keyframes load6 {
+    0% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+            0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    5%,
+    95% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+            0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    10%,
+    59% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em,
+            -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+    20% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em,
+            -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    }
+    38% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em,
+            -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    }
+    100% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+            0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+}
+@keyframes load6 {
+    0% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+            0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    5%,
+    95% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+            0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    10%,
+    59% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em,
+            -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+    20% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em,
+            -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    }
+    38% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em,
+            -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    }
+    100% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+            0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+}
+@-webkit-keyframes round {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes round {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.animation360 {
+    animation: container 5s linear reverse infinite;
+    -moz-animation: container 5s linear reverse infinite;
+    /* Firefox */
+    -webkit-animation: container 5s linear reverse infinite;
+    /* Safari and Chrome */
+    -o-animation: container 5s linear reverse infinite;
+    /* Opera */
+}
+@keyframes container {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+// antd 日期选择框
+.ant-calendar-picker-input.ant-input {
+    border: 0;
+    border-radius: 16px;
+    color: #333;
+    font-size: 12px;
+    padding: 3px 15px;
+    height: 30px;
+}
+
+// antd 文字按钮
+.ant-btn-link {
+    padding: 0;
+}
+
+.ant-btn > span{
+    vertical-align: initial;
+}
+//antd tooltip样式
+.ant-tooltip {
+    max-width: 500px;
+}
+// 5.0css
+// 主标题
+.main-title-text {
+    font-size: 18px;
+    color: $heading-color;
+    font-weight: 500;
+}
+// 次级标题
+.main-title-level2-text {
+    font-size: 16px;
+    color: $heading-color;
+    font-weight: 500;
+}
+// 小标题加粗
+.subtitle-text-bold {
+    font-size: 14px;
+    color: $heading-color;
+    font-weight: bold;
+}
+// 小标题
+.subtitle-text {
+    font-size: 14px;
+    color: $heading-color;
+    font-weight: 400;
+}
+// 正文
+.main-text {
+    font-size: 12px;
+    color: $text-color;
+    font-weight: 400;
+}
+
+// 辅助文字
+.auxiliary-text {
+    font-size: 12px;
+    color: $text-color-secondary;
+    font-weight: 400;
+}
+
+// 失效文字
+.invalid-text {
+    font-size: 12px;
+    color: $disabled-color;
+    font-weight: 400;
+}
+//页面标题
+.page-title {
+    padding-left: 14px;
+    line-height: $page-title-height;
+    font-size: 16px;
+    color: $heading-color;
+    font-weight: 500;
+}
+.ant-btn-sm,
+.ant-btn,
+.ant-btn-lg {
+    min-width: 54px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+// 平台icon颜色
+@include platformBgIconColor();
+@include platformIconColor();
+
+// 弹框背景样式
+.popup_wrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: 0.5);
+    @include flex-def();
+    @include flex-zCenter();
+    @include flex-cCenter();
+    z-index: 1000;
+
+    .popup_content_wrap {
+        position: relative;
+        border-radius: $border-radius-base;
+        background: #fff;
+        .header {
+            position: relative;
+            height: $pop_header_height;
+            line-height: 40px;
+            background-color: $pop_header_bg;
+            color: $heading-color;
+            font-size: 14px;
+            text-indent: 20px;
+            border-top-left-radius: $border-radius-base;
+            border-top-right-radius: $border-radius-base;
+            > .iconClosex {
+                position: absolute;
+                right: 10px;
+                font-size: 18px;
+                color: $text-color-assist;
+                cursor: pointer;
+                z-index: 1;
+            }
+        }
+        > .iconClosex {
+            position: absolute;
+            top: 6px;
+            right: 10px;
+            font-size: 18px;
+            color: $text-color-assist;
+            cursor: pointer;
+            z-index: 1;
+        }
+    }
+}
+// 全局antd dropdown 样式
+.ant-dropdown {
+    .ant-dropdown-menu-item {
+        > span {
+            width: 100%;
+        }
+    }
+}
+// Notification通知提醒框 层级
+.ant-notification {
+    z-index: 999;
+}
+#scrollwrap {
+    width: 100%;
+}
+.iconfont {
+    display: inline-block;
+}

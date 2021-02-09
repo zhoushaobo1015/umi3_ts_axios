@@ -1,0 +1,492 @@
+/* 公共flex方法：调用方式 --> ;
+先引入 @import '../common/global.scss';
+再调用 @include flex-def(); */
+
+// 主题蓝色
+$themeBlue: #0f79fa;
+// 主题蓝色透明10%
+$themeBlue_opacity_10: #e7f1fe;
+// 主题黄色
+$themeYellow: #ff7922;
+// 主题绿色
+$themeGreen: #49c057;
+// 主题红色
+$themeRed: #ff503d;
+// 主题灰白
+$themeF5: #f5f5f5;
+// 标题色
+$heading-color: #333;
+// 主文本色
+$text-color: #666;
+// 次文本色
+$text-color-secondary: #999;
+// icon/辅助色
+$text-color-assist: #999;
+// 失效色
+$disabled-color: #ccc;
+// 分割线色
+$divider-color: #eee;
+// 边框色
+$border-color: #ddd;
+// 边框圆角
+$border-radius-base: 4px;
+// 背景色
+$background-color: #eef1f5;
+// 页面title 高度
+$page-title-height: 54px;
+// 鼠标划过下拉框选项时的颜色
+$hoverColor: #f2f6fe;
+// 弹窗头部背景颜色
+$pop_header_bg: #f5f5f5;
+
+$pop_header_height: 40px;
+
+$charts-height: 306px;
+// 各平台背景颜色
+$facebookBgColor: #1877f2;
+$twitterBgColor: #4fa0ec;
+$instagramBgColor: #ba6183;
+$linkedinBgColor: #0b66c1;
+$youtubeBgColor: #e83324;
+
+// 营销计划中的八种颜色
+$planOrangeRed: #ee7c70;
+$planOrangeYellow: #f5bc67;
+$planYellow: #fbe672;
+$planGreen: #8be57e;
+$planSkyBlue: #64daf8;
+$planBlue: #64a5f8;
+$planPurple: #cb8af8;
+$planPink: #f88ae7;
+
+/* 定义 */
+@mixin flex-def {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+/* 主轴居中 */
+@mixin flex-zCenter {
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+/* 主轴两端对齐 */
+@mixin flex-zBetween {
+    -webkit-box-pack: justify;
+    -moz-justify-content: space-between;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+/* 主轴end对齐 */
+@mixin flex-zEnd {
+    -webkit-box-pack: end;
+    -moz-justify-content: flex-end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+/* 主轴start对齐 */
+@mixin flex-zStart {
+    -webkit-box-pack: start;
+    -moz-justify-content: start;
+    -webkit-justify-content: start;
+    justify-content: start;
+}
+
+/* 侧轴居中 */
+@mixin flex-cCenter {
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+/* 侧轴start对齐 */
+@mixin flex-cStart {
+    -webkit-box-align: start;
+    -moz-align-items: start;
+    -webkit-align-items: start;
+    align-items: start;
+}
+
+/* 侧轴底部对齐 */
+@mixin flex-cEnd {
+    -webkit-box-align: end;
+    -moz-align-items: flex-end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+}
+
+/* 侧轴文本基线对齐 */
+@mixin flex-cBaseline {
+    -webkit-box-align: baseline;
+    -moz-align-items: baseline;
+    -webkit-align-items: baseline;
+    align-items: baseline;
+}
+
+/* 侧轴上下对齐并铺满 */
+@mixin flex-cStretch {
+    -webkit-box-align: stretch;
+    -moz-align-items: stretch;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+}
+
+/* 主轴从上到下 */
+@mixin flex-zTopBottom {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+/* 主轴从下到上 */
+@mixin flex-zBottomTop {
+    -webkit-box-pack: end;
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column-reverse;
+    -webkit-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+}
+
+/* 主轴从左到右 */
+@mixin flex-zLeftRight {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+
+/* 主轴从右到左 */
+@mixin flex-zRightLeft {
+    -webkit-box-pack: end;
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+    -moz-flex-direction: row-reverse;
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+
+/*  */
+@mixin flex-sEvenly {
+    -webkit-box-pack: space-evenly;
+    -moz-justify-content: space-evenly;
+    -webkit-justify-content: space-evenly;
+    justify-content: space-evenly;
+}
+
+/*  */
+@mixin flex-sAround {
+    -webkit-box-pack: space-around;
+    -moz-justify-content: space-around;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+}
+
+/* 是否允许子元素伸缩 */
+@mixin flex-item {
+    -webkit-box-flex: 1;
+    -moz-flex-grow: 1;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}
+/* 子元素的显示次序 */
+@mixin flex-order {
+    -webkit-box-ordinal-group: 1;
+    -moz-order: 1;
+    -webkit-order: 1;
+    order: 1;
+}
+/*换行，第一行在上方  */
+@mixin flex-zWrap {
+    -webkit-box-pack: wrap;
+    -moz-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+@mixin align-content($value: center) {
+    -moz-align-content: $value;
+    -webkit-align-content: $value;
+    align-content: $value;
+}
+
+// 水平垂直居中
+@mixin flexCenter {
+    @include flex-def();
+    @include flex-zCenter();
+    @include flex-cCenter();
+}
+/* 旋转 角度(angle) */
+@mixin transform-rotate($angle: 180deg) {
+    transform: rotate($angle);
+    -ms-transform: rotate($angle); /* Internet Explorer */
+    -moz-transform: rotate($angle); /* Firefox */
+    -webkit-transform: rotate($angle); /* Safari 和 Chrome */
+    -o-transform: rotate($angle); /* Opera */
+}
+/* 超出几行省略... */
+@mixin ellipsis($webkit-line-clamp: 3) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $webkit-line-clamp;
+    /*! autoprefixer: off */
+    -webkit-box-orient: vertical;
+    @if $webkit-line-clamp == 1 {
+        word-break: break-all;
+    }
+}
+
+// font-size
+@mixin fontSize($fontSize, $height: $fontSize) {
+    font-size: $fontSize;
+    height: $height;
+    line-height: $height;
+}
+
+// 图片变灰
+@mixin imgGray {
+    -webkit-filter: grayscale(1); /* Webkit */
+    filter: gray; /* IE6-9 */
+    filter: grayscale(1); /* W3C */
+}
+
+// 取消图片变灰
+@mixin cancelImgGray {
+    -webkit-filter: none; /* Webkit */
+    filter: none; /* IE6-9 */
+    filter: none; /* W3C */
+}
+
+// $hShadow：水平阴影的位置, $vShadow：垂直阴影的位置, $blur：模糊距离
+// $spread：阴影的尺寸, $color：阴影的颜色
+@mixin boxShadow(
+    $hShadow: -1px,
+    $vShadow: 1px,
+    $blur: 9px,
+    $spread: 0px,
+    $color: rgba(0, 0, 0, 0.06),
+    $inset: ''
+) {
+    $params: $hShadow $vShadow $blur $spread $color;
+    @if $inset == 'inset' {
+        $params: $params inset;
+    }
+    -moz-box-shadow: $params;
+    -webkit-box-shadow: $params;
+    box-shadow: $params;
+}
+
+@mixin placeholder($fontsize: 12px, $color: #aaa) {
+    &:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        font-size: $fontsize;
+        color: $color;
+    }
+    &:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        font-size: $fontsize;
+        color: $color;
+    }
+    &::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        font-size: $fontsize;
+        color: $color;
+    }
+    &::-webkit-input-placeholder {
+        /* WebKit, Blink, Edge */
+        font-size: $fontsize;
+        color: $color;
+    }
+}
+
+@mixin scrollBar() {
+    /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+        // background-color: #eee;
+    }
+    /*定义滚动条轨道 内阴影+圆角*/
+    // &::-webkit-scrollbar-track {
+    // box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    // border-radius: $border-radius-base;
+    // background-color: #fff;
+    // }
+    /*定义滑块 内阴影+圆角*/
+    &::-webkit-scrollbar-thumb {
+        /*滚动条里面小方块*/
+        border-radius: $border-radius-base;
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+        background: #cccccc;
+    }
+    &:hover::-webkit-scrollbar-thumb {
+        /*滚动条里面小方块*/
+        border-radius: $border-radius-base;
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+        background: #727272;
+    }
+    &::-webkit-scrollbar-track {
+        /*滚动条里面轨道*/
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+        border-radius: $border-radius-base;
+        background: #ededed;
+    }
+}
+
+// 隐藏滚动条
+@mixin hideScrollBar() {
+    &::-webkit-scrollbar {
+        display: none;
+        width: 0 !important;
+    }
+    -ms-overflow-style: none;
+}
+
+// 背景渐变，$direction：left 从左到右，right 从右到左
+@mixin bgGradient($direction, $colorStop1, $colorStop2) {
+    $d: left;
+    @if $direction == left {
+        $d: right;
+    }
+    @if $direction == top {
+        $d: bottom;
+    }
+    @if $direction == bottom {
+        $d: top;
+    }
+    background: -webkit-linear-gradient(
+        $direction,
+        $colorStop1,
+        $colorStop2
+    ); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient($direction, $colorStop1, $colorStop2); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient($direction, $colorStop1, $colorStop2); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to $d, $colorStop1, $colorStop2); /* 标准的语法 */
+}
+
+// $name：keyframe名称，$duration：动画花费的时间，$timingFunction：动画的速度曲线
+// $delay：动画开始之前的延迟，$iterationCount：动画播放的次数，$direction：是否应该轮流反向播放动画
+@mixin animation(
+    $name,
+    $duration,
+    $timingFunction: linear,
+    $delay: 0s,
+    $iterationCount: 1,
+    $direction: normal
+) {
+    animation: $name $duration $timingFunction $delay $iterationCount $direction;
+    /* Firefox: */
+    -moz-animation: $name $duration $timingFunction $delay $iterationCount $direction;
+    /* Safari 和 Chrome: */
+    -webkit-animation: $name $duration $timingFunction $delay $iterationCount $direction;
+    /* Opera: */
+    -o-animation: $name $duration $timingFunction $delay $iterationCount $direction;
+}
+
+@mixin platformIconColor($size: 14px) {
+    .iconffbb {
+        color: #1877f2;
+        font-size: $size;
+    }
+    .iconttww {
+        color: #4fa0ec;
+        font-size: $size;
+    }
+    .iconinss {
+        color: #ba6183;
+        font-size: $size;
+    }
+    .iconyou-tube {
+        color: #e83324;
+        font-size: $size;
+    }
+    .iconlinkedin {
+        color: #0b66c1;
+        font-size: $size;
+    }
+}
+@mixin platformBgIconColor($size: 14px) {
+    .iconfa {
+        color: #1877f2;
+        font-size: $size;
+    }
+    .icontw {
+        color: #4fa0ec;
+        font-size: $size;
+    }
+    .iconins {
+        color: #ba6183;
+        font-size: $size;
+    }
+    .iconyoutube {
+        color: #e83324;
+        font-size: $size;
+    }
+    .iconlink1 {
+        color: #0b66c1;
+        font-size: $size;
+    }
+}
+@mixin opaquePlatformIconColor($size: 14px) {
+    .iconffbb {
+        background-color: #1877f2;
+        font-size: $size;
+    }
+    .iconttww {
+        background-color: #4fa0ec;
+        font-size: $size;
+    }
+    .iconinss {
+        background-color: #ba6183;
+        font-size: $size;
+    }
+    .iconyou-tube {
+        background-color: #e83324;
+        font-size: $size;
+    }
+    .iconlinkedin {
+        background-color: #0b66c1;
+        font-size: $size;
+    }
+}
+@mixin MockBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    @include flex-def();
+    @include flex-cCenter();
+    @include flex-zCenter();
+    z-index: 999;
+}
+@mixin AlerTitle {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 25px;
+    padding-right: 15px;
+    color: $heading-color;
+    font-size: 14px;
+    background: $pop_header_bg;
+    @include flex-def();
+    @include flex-cCenter();
+    @include flex-zBetween();
+    .iconClosex {
+        font-size: 18px;
+        color: $text-color-assist;
+        cursor: pointer;
+    }
+}
